@@ -17,11 +17,13 @@ RUN chown -R daemon:daemon /opt/kafka/kafka_2.9.2-0.8.1
 RUN mkdir -p /var/log/kafka
 RUN chown daemon:daemon /var/log/kafka
 
-USER daemon
 
 ADD config /opt/kafka/config
 ADD env_template.py /opt/kafka/
 ADD run.sh /opt/kafka/
+RUN chown -R daemon:daemon /opt/kafka/config
+
+USER daemon
 
 EXPOSE 2181 2888 3888
 
