@@ -19,7 +19,7 @@ def sort(a, b):
 
 
 def get_zookeepers():
-    pattern = re.compile(r'^ZK([0-9]*)_PORT_([0-9]+)_TCP_ADDR$')
+    pattern = re.compile(r'^ZK([0-9]*)_PORT_(2181)_TCP_ADDR$')
     matches = filter(lambda x: x, (pattern.match(key) for key in os.environ.keys()))
     matches.sort(sort)
     ports = (match.group(2) for match in matches)
