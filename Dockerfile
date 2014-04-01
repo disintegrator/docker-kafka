@@ -13,7 +13,7 @@ RUN gpg --verify /opt/kafka/0.8.1.tgz.asc
 RUN tar -xzf /opt/kafka/0.8.1.tgz -C /opt/kafka/
 ADD config /opt/kafka/config
 ADD env_template.py /opt/kafka/
-RUN python env_template.py /opt/kafka/config
+RUN python /opt/kafka/env_template.py /opt/kafka/config
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
