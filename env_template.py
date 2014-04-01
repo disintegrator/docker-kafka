@@ -4,6 +4,7 @@ import argparse
 import contextlib
 import os
 import re
+import socket
 import string
 
 
@@ -34,6 +35,7 @@ def get_broker_id():
 
 def get_context():
     return {
+        'hostname': socket.gethostbyname(socket.gethostname()),
         'zookeeper_servers': get_zookeepers(),
         'broker_id': get_broker_id()
     }
