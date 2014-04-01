@@ -25,7 +25,7 @@ RUN chown -R daemon:daemon /opt/kafka/config
 
 USER daemon
 
-EXPOSE 2181 2888 3888
+EXPOSE 9092
 
 ENTRYPOINT ["/bin/sh"]
 CMD ["/opt/kafka/run.sh"]
